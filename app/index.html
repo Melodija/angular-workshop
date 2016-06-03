@@ -6,9 +6,10 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/counterController.js"></script>
+    <script src="js/services/counterService.js"></script>
   </head>
   <body>
-
+<!--
     <div ng-controller="ExampleCtrl as example">
       <h1>Example</h1>
 
@@ -21,13 +22,13 @@
         <button ng-click="example.exampleFactory.storeTime()">Store factory time</button>
         Time is: {{ example.exampleFactory.currentTime }}
       </div>
-    </div>
+    </div> -->
 
     <div ng-controller="CounterCtrl as counterCtrl">
-      <div ng-repeat="counter in counterCtrl.counters">
-        <button ng-click="counterCtrl.decrement(counter)">-</button>
+      <div ng-repeat="counter in counterCtrl.counterService.counters">
+        <button ng-click="counterCtrl.counterService.decrement(counter)">-</button>
         {{ counter.count  }}
-        <button ng-click="counterCtrl.increment(counter)">+</button>
+        <button ng-click="counterCtrl.counterService.increment(counter)">+</button>
       </div>
     </div>
   </body>
